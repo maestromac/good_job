@@ -3,6 +3,9 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+ruby_version_path = File.join(File.dirname(__FILE__), '.ruby-version')
+ruby(File.read(ruby_version_path).strip) if File.exist?(ruby_version_path)
+
 # Declare your gem's dependencies in good_job.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
 # development dependencies will be added by default to the :development group.
